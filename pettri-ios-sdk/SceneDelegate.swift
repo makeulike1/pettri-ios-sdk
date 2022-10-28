@@ -62,11 +62,27 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
         for context in URLContexts {
+            
+            let urlString  = context.url.absoluteURL.absoluteString
+            
             print("url: \(context.url.absoluteURL)")
             print("scheme: \(context.url.scheme)")
             print("host: \(context.url.host)")
             print("path: \(context.url.path)")
             print("components: \(context.url.pathComponents)")
+            
+            guard urlString.contains("click_key") else { return }
+
+            let components = URLComponents(string: urlString)
+            let urlQueryItems = components?.queryItems ?? [] // [name=jake]
+
+            var dictionaryData = [String: String]()
+            urlQueryItems.forEach { dictionaryData[$0.name] = $0.value }
+
+            guard let ck = dictionaryData["click_key"] else { return }
+
+            print("클릭키 = \(ck)")
+            
           }
     }
 
