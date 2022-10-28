@@ -63,15 +63,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
         for context in URLContexts {
             
+            
+            
+            // 클릭키와 트래킹 아이디 추출
             let urlString  = context.url.absoluteURL.absoluteString
             
-            print("url: \(context.url.absoluteURL)")
-            print("scheme: \(context.url.scheme)")
-            print("host: \(context.url.host)")
-            print("path: \(context.url.path)")
-            print("components: \(context.url.pathComponents)")
+            print("Url: \(context.url.absoluteURL)")
             
             guard urlString.contains("click_key") else { return }
+            guard urlString.contains("trkId") else { return }
 
             let components = URLComponents(string: urlString)
             let urlQueryItems = components?.queryItems ?? [] // [name=jake]
@@ -80,9 +80,46 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             urlQueryItems.forEach { dictionaryData[$0.name] = $0.value }
 
             guard let ck = dictionaryData["click_key"] else { return }
+            guard let trackingId = dictionaryData["trkId"] else { return }
 
-            print("클릭키 = \(ck)")
+            print("Click key = \(ck)")
+            print("Tracking id = \(trackingId)")
             
+            
+            
+            
+            
+            // 첫 딥링크 오픈에 대해서 로그를 생성
+            let url = "http://test.adrunner.co.kr:8083/install/create"
+            let prop = [] as Array<Any>
+            let params = ["ck":ck, "trackingId":trackingId, "prop":prop] as Dictionary<String, Any>
+                        
+            
+            var request = URLRequest(url: URL(string: url)!)
+            request.httpMethod = "POST"
+            request.httpBody = try? JSONSerialization.data(withJSONObject: params, options: [])
+            request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+            
+            print("Request Data : ", params)
+            
+            let session = URLSession.shared
+            let task = session.dataTask(with: request, completionHandler: { data, response, error -> Void in
+                if let httpResponse = response as? HTTPURLResponse {
+                    print("Status code: (\(httpResponse.statusCode))")
+                    // do stuff.
+                }
+                
+                /*
+                    do {
+                        let json = try JSONSerialization.jsonObject(with: data!) as! Dictionary<String, AnyObject>
+                        print(json)
+                    } catch {
+                        print("error")
+                    }
+                 */
+            })
+        
+            task.resume()
           }
     }
 
