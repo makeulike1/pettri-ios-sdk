@@ -32,5 +32,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 
+    func application(_ application: UIApplication,
+                     open url: URL,
+                     options: [UIApplication.OpenURLOptionsKey : Any] = [:] ) -> Bool {
+
+        // Determine who sent the URL.
+        let sendingAppID = options[.sourceApplication]
+        print("source application = \(sendingAppID ?? "Unknown")")
+
+        // Process the URL.
+        guard let components = NSURLComponents(url: url, resolvingAgainstBaseURL: true),
+            let path = components.path,
+            let params = components.queryItems else {
+                print("Invalid URL")
+                return false
+        }
+        
+        print(path)
+        print(params)
+        return true
+    }
+    
+    
 }
 
