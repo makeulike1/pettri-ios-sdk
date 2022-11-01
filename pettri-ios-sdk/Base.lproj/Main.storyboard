@@ -48,6 +48,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="로그인"/>
+                                <connections>
+                                    <action selector="loginWith_sender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aC7-aO-Rfb"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jXI-EU-B6E">
                                 <rect key="frame" x="211" y="456" width="88" height="44"/>
@@ -69,6 +72,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
+                        <outlet property="buttonLogin" destination="L8Z-dl-XFT" id="wah-qz-t3j"/>
                         <outlet property="buttonSignup" destination="jXI-EU-B6E" id="cep-Ct-OaN"/>
                     </connections>
                 </viewController>
@@ -90,6 +94,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="akS-Yw-LPV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-168" y="-706"/>
+        </scene>
+        <!--Login View Controller-->
+        <scene sceneID="F0h-hI-6QB">
+            <objects>
+                <viewController storyboardIdentifier="LoginViewController" id="Nxn-L4-XAg" customClass="LoginViewController" customModule="pettri_ios_sdk" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Huc-kc-fxP">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="v3B-A6-Nn4"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TtU-tp-YyO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-466" y="-1384"/>
         </scene>
     </scenes>
     <resources>
