@@ -17,6 +17,7 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         Header.textAlignment = .center
+        
     }
 
     @IBAction func goMain(_ sender: Any) {

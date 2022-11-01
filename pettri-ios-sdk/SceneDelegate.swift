@@ -62,12 +62,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
         for context in URLContexts {
-            let ptrInit = PettriInit()
-            ptrInit.parseCkAndTRKId(url:context.url.absoluteURL)
-            print("CLICK KEY = \(ptrInit.CLICK_KEY)")
-            print("TRACKING ID = \(ptrInit.TRACKING_ID)")
+            pettri.start(url:context.url.absoluteURL)
+            print("CLICK KEY = \(pettri.CLICK_KEY)")
+            print("TRACKING ID = \(pettri.TRACKING_ID)")
             
-            ptrInit.sendInstall()
+            pettri.sendInstall()
           }
     }
 

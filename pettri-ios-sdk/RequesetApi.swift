@@ -8,7 +8,7 @@
 import Foundation
 
 class RequestApi {
-      
+    
     func doPost(url:String, params:Dictionary<String, Any>){
         
         var request = URLRequest(url: URL(string: url)!)
