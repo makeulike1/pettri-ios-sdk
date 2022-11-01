@@ -9,12 +9,18 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var buttonSignup: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
      
     }
-
-
+    @IBAction func signUp(_sender:UIButton){
+        guard let signUP =
+                self.storyboard?.instantiateViewController(identifier: "SignUpViewController") else {return}
+        self.present(signUP, animated:true)
+        print("signup")
+    } 
+    
 }
 
