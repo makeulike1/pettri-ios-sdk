@@ -9,14 +9,21 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var Header: UILabel!
+    
     @IBOutlet weak var buttonSignup: UIButton!
     
     @IBOutlet weak var buttonLogin: UIButton!
     
     @IBAction func signUp(_sender:UIButton){
+        /*
         guard let signUP =
                 self.storyboard?.instantiateViewController(identifier: "SignUpViewController") else {return}
         self.present(signUP, animated:true)
+         */
+        // navigation controller 로 화면 전환
+        guard let homeVC = self.storyboard?.instantiateViewController(withIdentifier: "SignUpViewController") else { return }
+        self.navigationController?.pushViewController(homeVC, animated: true)
         print("signup")
     }
     
@@ -29,6 +36,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        Header.textAlignment = .center
      
     }
     

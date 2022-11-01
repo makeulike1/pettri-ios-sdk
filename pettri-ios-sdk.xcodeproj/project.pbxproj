@@ -11,6 +11,7 @@
 		C41BEC10290BBFE200C9DED0 /* PettriInit.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41BEC0F290BBFE200C9DED0 /* PettriInit.swift */; };
 		C440E0EC2910F16900D10798 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C440E0EB2910F16900D10798 /* SignUpViewController.swift */; };
 		C440E0EE2910F25D00D10798 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C440E0ED2910F25D00D10798 /* LoginViewController.swift */; };
+		C440E0F02910FA3A00D10798 /* SignUpCompleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C440E0EF2910FA3A00D10798 /* SignUpCompleteViewController.swift */; };
 		C46D758F290A05A200A83C17 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46D758E290A05A200A83C17 /* AppDelegate.swift */; };
 		C46D7591290A05A200A83C17 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46D7590290A05A200A83C17 /* SceneDelegate.swift */; };
 		C46D7593290A05A200A83C17 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46D7592290A05A200A83C17 /* ViewController.swift */; };
@@ -44,6 +45,7 @@
 		C41BEC0F290BBFE200C9DED0 /* PettriInit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PettriInit.swift; sourceTree = "<group>"; };
 		C440E0EB2910F16900D10798 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		C440E0ED2910F25D00D10798 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		C440E0EF2910FA3A00D10798 /* SignUpCompleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCompleteViewController.swift; sourceTree = "<group>"; };
 		C46D758B290A05A200A83C17 /* pettri-ios-sdk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "pettri-ios-sdk.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C46D758E290A05A200A83C17 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C46D7590290A05A200A83C17 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 				C41BEC0F290BBFE200C9DED0 /* PettriInit.swift */,
 				C440E0EB2910F16900D10798 /* SignUpViewController.swift */,
 				C440E0ED2910F25D00D10798 /* LoginViewController.swift */,
+				C440E0EF2910FA3A00D10798 /* SignUpCompleteViewController.swift */,
 			);
 			path = "pettri-ios-sdk";
 			sourceTree = "<group>";
@@ -277,6 +280,7 @@
 				C46D758F290A05A200A83C17 /* AppDelegate.swift in Sources */,
 				C46D7591290A05A200A83C17 /* SceneDelegate.swift in Sources */,
 				C41BEC10290BBFE200C9DED0 /* PettriInit.swift in Sources */,
+				C440E0F02910FA3A00D10798 /* SignUpCompleteViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
