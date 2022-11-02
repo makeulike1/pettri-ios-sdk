@@ -66,12 +66,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             print("CLICK KEY = \(pettri.CLICK_KEY)")
             print("TRACKING ID = \(pettri.TRACKING_ID)")
             
-            pettri.sendInstall()
-             
+            pettri.firstInstall()
             appDatabase.insert(pettri.CLICK_KEY, pettri.TRACKING_ID)
-            
-            print("Saving click key and tracking ID into app database... success.")
-            
+                 
           }
     }
 

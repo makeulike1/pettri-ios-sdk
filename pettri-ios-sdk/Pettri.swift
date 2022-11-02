@@ -71,8 +71,8 @@ class Pettri{
     
     
     
-    /*** Send Re-Installation Log to Attribution . */
-    func sendInstall(){
+    /*** Send Installation Log to Attribution . */
+    func firstInstall(){
         let req = RequestApi()
         let url = "http://test.adrunner.co.kr:8083/install/create"
         let prop = [] as Array<Any>
@@ -131,6 +131,7 @@ class Pettri{
     }
     
     
+   
 }
 
 

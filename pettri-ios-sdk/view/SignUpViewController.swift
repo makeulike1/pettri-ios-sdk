@@ -24,18 +24,14 @@ class SignUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         Header.textAlignment = .center
-     
     }
  
     @IBAction func goback(_sender:UIButton){
-        print("signup_rollback")
         self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction func signup(_ sender: Any) {
-        
         let signupUserId:String = textFieldID.text!
         let signupEMAIL:String = textFieldEmail.text!
         let signupName:String = textFieldName.text!
