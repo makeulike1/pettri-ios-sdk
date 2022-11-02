@@ -8,6 +8,11 @@
 import Foundation
 import SQLite3
 
+struct Prop{
+    let key:String
+    let value:String
+}
+
 class Pettri{
      
     
@@ -22,6 +27,8 @@ class Pettri{
         self.CLICK_KEY = CLICK_KEY
         self.TRACKING_ID = TRACKING_ID
         self.USER_ID = USER_ID
+        
+        print("[PETTRI]Pettri start. ")
     }
     
     
@@ -77,6 +84,20 @@ class Pettri{
     
     
     
+    /*** Creating User on Attribution */
+    func createUser(userId:String, prop:Array<Dictionary<String, Any>>){
+        let req = RequestApi()
+        let url = "http://test.adrunner.co.kr:8083/user/create"
+        let params = ["ck":CLICK_KEY, "trackingId":TRACKING_ID, "userId":userId, "prop":prop] as Dictionary<String, Any>
+        req.doPost(url: url, params: params)
+    }
+    
+    
+    
+    
+    
+    
+    
     /*** Send Event Log to Attribution. **/
     func sendEvent(name:String){
         let req = RequestApi()
@@ -93,19 +114,20 @@ class Pettri{
     func login(userId:String){
         USER_ID = userId
         isLogin = true
-        
         sendEvent(name:"login")
+        
+        print("[PETTRI]User(\(userId)) is successfully login. " )
     }
     
     
     
     
     /*** Save logout data into Pettri module. */
-    func logout(userId:String){
-        USER_ID = userId
+    func logout(){
         isLogin = false
-        
         sendEvent(name:"logout")
+        
+        print("[PETTRI]User(\(USER_ID)) is successfully logout." )
     }
     
     

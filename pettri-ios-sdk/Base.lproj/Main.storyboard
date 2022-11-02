@@ -120,14 +120,14 @@
                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="gnmtest" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a9E-gx-s3h">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="abc" borderStyle="roundedRect" placeholder="gnmtest" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a9E-gx-s3h">
                                 <rect key="frame" x="172" y="220" width="140" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="abc@gnmpm.com" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hi9-2f-v7w">
-                                <rect key="frame" x="172" y="292" width="140" height="34"/>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="abc@gnmpm.com" borderStyle="roundedRect" placeholder="abc@gnmpm.com" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hi9-2f-v7w">
+                                <rect key="frame" x="172" y="292" width="145" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -147,11 +147,12 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="Submit"/>
                                 <connections>
+                                    <action selector="signup:" destination="9tK-fz-LpN" eventType="touchUpInside" id="Ovl-3c-LkK"/>
                                     <segue destination="bfl-YQ-uLu" kind="show" id="Wp2-aL-F78"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="지엔앰퍼포먼스" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="r5l-Le-rI9">
-                                <rect key="frame" x="172" y="373" width="140" height="34"/>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="abc" borderStyle="roundedRect" placeholder="지엔앰퍼포먼스" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="r5l-Le-rI9">
+                                <rect key="frame" x="172" y="374" width="140" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -163,6 +164,9 @@
                     <navigationItem key="navigationItem" id="6D7-MX-KH2"/>
                     <connections>
                         <outlet property="Header" destination="u37-eX-83E" id="35G-nP-nfr"/>
+                        <outlet property="textFieldEmail" destination="hi9-2f-v7w" id="rDl-sf-7ab"/>
+                        <outlet property="textFieldID" destination="a9E-gx-s3h" id="Aov-Sc-adz"/>
+                        <outlet property="textFieldName" destination="r5l-Le-rI9" id="OWI-Bt-BPm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="akS-Yw-LPV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

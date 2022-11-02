@@ -22,6 +22,7 @@ class LoginViewController: UIViewController {
 
     @IBAction func goMain(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
+        pettri.logout()
     }
     
 }

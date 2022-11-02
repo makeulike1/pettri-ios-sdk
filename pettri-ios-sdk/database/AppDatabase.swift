@@ -32,7 +32,7 @@ class AppDatabase{
             let filePath = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false).appendingPathComponent(path)
                     
             if sqlite3_open(filePath.path, &db) == SQLITE_OK {
-                print("Succesfully create Database path : \(filePath.path)")
+                print("[PETTRI]Succesfully create Database path : \(filePath.path)")
                 return db
             }
                 
@@ -128,7 +128,7 @@ class AppDatabase{
             let clickKey = String(cString: sqlite3_column_text(stmt, 1))
             let trackingId = String(cString: sqlite3_column_text(stmt, 2))
         
-            print("Setting up click key["+clickKey+"] and tracking id["+trackingId+"] into pettri module... success. ")
+            print("[PETTRI]Setting up click key["+clickKey+"] and tracking id["+trackingId+"] into pettri module... success. ")
             
             pettri.setup(clickKey:clickKey, trackingId:trackingId)
         }
