@@ -6,8 +6,11 @@
 //
 
 import Foundation
+import SQLite3
 
 class Pettri{
+     
+    
     
     var CLICK_KEY:String        = ""
     var TRACKING_ID:String      = ""
@@ -20,6 +23,17 @@ class Pettri{
         self.TRACKING_ID = TRACKING_ID
         self.USER_ID = USER_ID
     }
+    
+    
+    
+    
+    /*** Setup App data */
+    func setup(clickKey:String, trackingId:String){
+        TRACKING_ID = trackingId
+        CLICK_KEY = clickKey
+    }
+    
+    
     
     
     /*** Initialize the Pettri Module. */
@@ -61,6 +75,8 @@ class Pettri{
     
     
     
+    
+    
     /*** Send Event Log to Attribution. **/
     func sendEvent(name:String){
         let req = RequestApi()
@@ -69,6 +85,8 @@ class Pettri{
         let params = ["ck":CLICK_KEY, "trackingId":TRACKING_ID, "userId":USER_ID, "name":name, "prop":prop] as Dictionary<String, Any>
         req.doPost(url: url, params: params)
     }
+    
+    
     
     
     /*** Save login data into Petrri module.*/
@@ -81,6 +99,7 @@ class Pettri{
     
     
     
+    
     /*** Save logout data into Pettri module. */
     func logout(userId:String){
         USER_ID = userId
@@ -89,7 +108,9 @@ class Pettri{
         sendEvent(name:"logout")
     }
     
+    
 }
+
 
 
 var pettri = Pettri(CLICK_KEY: "", TRACKING_ID: "", USER_ID: "")

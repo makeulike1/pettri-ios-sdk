@@ -22,7 +22,6 @@ class RequestApi {
         let task = session.dataTask(with: request, completionHandler: { data, response, error -> Void in
             if let httpResponse = response as? HTTPURLResponse {
                 print("Status code: (\(httpResponse.statusCode))")
-                // do stuff.
             }
     
         })

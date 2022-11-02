@@ -50,6 +50,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         print(path)
         print(params)
+         
         return true
     }
     

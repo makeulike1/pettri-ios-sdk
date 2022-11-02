@@ -25,7 +25,7 @@ class ViewController: UIViewController {
     
     @IBAction func login(_sender:UIButton){
         
-        var userID:String = textFieldID.text!
+        let userID:String = textFieldID.text!
         
         guard let login =
                 self.storyboard?.instantiateViewController(identifier: "LoginViewController") else {return}
@@ -40,6 +40,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         Header.textAlignment = .center
+        appDatabase.setupAppData()
     }
     
 }
