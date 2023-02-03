@@ -36,6 +36,21 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         Header.textAlignment = .center
         appDatabase.setupAppData()
+        do{
+            let temp = try test.getKeychainData(itemKey: "test")
+            if( temp != nil ){
+                print(temp!)
+            }
+            else{
+                do{
+                    try test.addKeychainData(itemKey: "test", itemValue: "hi")
+                }catch{
+                    
+                }
+            }
+        }catch{
+            
+        }
     }
     
 }
